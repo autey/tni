@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Glymphatic Detox</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .radio-inline {
+            margin: 0px 5px;
+        }
+    </style>
+    <style>
+            td{
+            padding: 3px !important;
+            padding-left: 10px !important;
+            padding-right: 10px !important;
+        }
+    </style>
+    
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="jumbotron" style="margin-top: 20px;">
+            <h1 class="display-3">Glymphatic Detox</h1>
+            <p class="lead">
+                Please refer to information on "Glymphatic Detox" in the Trisomy 21 Research group.
+                <br> <br>               
+                I designed this for my personal reference only. Use at your own risk.
+            </p>
+        </div>
+        
+        <br><br>
+        <form action="/index.html">
+    <input type="submit" value="Main Calculator" />
+</form>
+        <br>
+        <form action="/basicprotocol.html">
+    <input type="submit" value="Where to buy" />
+</form>
+        <br>
+        <form action="/addons.html">
+    <input type="submit" value="Add-on Calculator" />
+</form>
+        <br><br>
+        
+
+        <div class="row">
+            <div class="col">
+                <p>
+                    
+                    
+                </p>
+            </div>
+        </div>
+        <div class="row offset-md-4 mt-2">
+            <div class="col">
+                <label>Body Weight</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4 offset-md-4 col-md-2">
+                <input id="bodyweight-input" type="text" class="form-control decimal">
+            </div>
+            <div class="col-4">
+                <div class="mt-2">
+                    <label class="radio-inline">
+                        <input type="radio" name="bodyweight-unit" value="lb" checked>lb
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="bodyweight-unit" value="kg">kg
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+       <div class="row mt-4">
+            <div class="col offset-md-4">
+                <label>How old is the subject?</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col offset-md-4">
+                <div class="radio">
+                    <input type="radio" name="age-btn" id="" value="inf">
+                    <label for="age-btn-inf">Infant</label>
+                </div>
+                <div class="radio">
+                    <input type="radio" name="age-btn" value="tod">
+                    <label for="age-btn-tod">Toddler</label>
+                </div>
+                <div class="radio">
+                    <input type="radio" name="age-btn" value="child" checked>
+                    <label for="age-btn-child">Child</label>
+                </div>
+                <div class="radio">
+                    <input type="radio" name="age-btn" value="adult">
+                    <label for="age-btn-adult">Adult</label>
+                </div>
+            </div>
+        </div> 
+        
+        <div class="row mt-4 offset-md-4">
+            <div class="col">
+                <button id="calculate-btn" type="button" class="btn btn-default">Calculate</button>
+            </div>
+        </div>
+
+        <div id="dosages-div" class="row mt-4 offset-md-4" hidden>
+            <div class="col-md-8">
+                <div class="card">
+                    <h3 class="card-header">
+                        Daily amounts
+                    </h3>
+                        <div class="card-block">
+                        <table class="table-bordered">
+                            <tr>
+                                <td>Lycopene</td>
+                                <td id="lyc-dose"></td> 
+                            </tr>
+                            <tr>
+                                <td>Setria Glutathione</td>
+                                <td id="glu-dose"></td> 
+                            </tr>
+                            <tr>
+                                <td>Vitamin C</td>
+                                <td id="vitc-dose"></td> 
+                            </tr>
+                            <tr>
+                                <td>Blueberry or Raspberry Polyphenols</td>
+                                <td id="blu-dose"></td> 
+                            </tr>
+                            <tr>
+                                <td>Omega 3</td>
+                                <td id="ome-dose"></td> 
+                            </tr>
+                            <tr>
+                                <td>Alpha-Lipoic Acid</td>
+                                <td id="ala-dose"></td> 
+                            </tr>
+                            
+                            <tr>
+                                <td>Melatonin</td>
+                                <td id="mel-dose"></td> 
+                            </tr>
+                            
+                        </table>
+                            </div>
+                    <div class="row mt-1 mb-1">
+                        <div class="col mr-2">
+                            <button id="print-btn" type="button" class="float-right btn btn-default">Print</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer mt-5">
+            <p>&copy; Devon Chan 2017</p>
+        </footer>
+        
+        <div id="print-div" hidden>
+            <h3>
+                Nutrition Calculator
+            </h3>
+            <p>When beginning a new supplement, start at 1/4 - 1/2 dosage. Work up to a full dose over a period of two weeks or more. 
+            
+            </p>
+            <h3>
+                Dosage
+            </h3>
+            <div id="print-result-div"></div>
+            <footer>
+                <p>&copy; Devon Chan 2017</p>
+            </footer>
+        </div>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+
+    <script type="text/javascript">
+        /*global $*/
+        var calculateResult = function () {
+            var bodyweightInKg = parseFloat($("#bodyweight-input").val());
+            var bodyweightIsLbs = $("input[name=bodyweight-unit]:checked").val() == "lb"; //true if lb is checked, false if kg is checked
+            if (bodyweightIsLbs) {
+                bodyweightInKg = bodyweightInKg / 2.20462;
+            }
+            
+           if (!bodyweightInKg) {
+                $("#glu-dose").html('');
+               $("#vitc-dose").html('');
+               $("#blu-dose").html('');
+                $("#ala-dose").html('');
+                
+            }
+            
+            var vitaminCDose = { 'mg': Math.round(bodyweightInKg * 15)};
+            var blueberryMinDose = { 'mg': Math.round(bodyweightInKg * 25)};
+            var blueberryMaxDose = { 'mg': Math.round(bodyweightInKg * 30)};
+            var alaDose = { 'mg': Math.round(bodyweightInKg * 9)};
+            var glutathioneMinDose = { 'mg': Math.round(bodyweightInKg * 4)};
+            var glutathioneMaxDose = { 'mg': Math.round(bodyweightInKg * 6)};
+            var melatoninDose = null
+            var lycopeneDose = null
+            var omega3Dose = null
+            
+            if($("input[name=age-btn]:checked").val() == "inf"){
+                melatoninDose = { 'mg': 1.0};
+                lycopeneDose = { 'mg': 3.0};
+                
+            }else if($("input[name=age-btn]:checked").val() == "tod"){
+                melatoninDose = { 'mg': 3.0};
+                lycopeneDose = { 'mg': 5.0};
+                
+            }else if($("input[name=age-btn]:checked").val() == "child"){
+                melatoninDose = { 'mg': 5.0};
+                lycopeneDose = { 'mg': 10.0};
+                
+            }else if($("input[name=age-btn]:checked").val() == "adult"){
+                melatoninDose = { 'mg': 10.0};
+                lycopeneDose = { 'mg': 15.0};
+                
+            }
+            
+            $("#blu-dose").html(blueberryMinDose.mg + ' - ' + blueberryMaxDose.mg + ' mg');
+            $("#vitc-dose").html(vitaminCDose.mg + ' mg');
+            $("#ala-dose").html(alaDose.mg + ' mg ');
+            $("#glu-dose").html(glutathioneMinDose.mg + ' - ' + glutathioneMaxDose.mg + ' mg');
+            $("#mel-dose").html(melatoninDose.mg + ' mg');
+            $("#lyc-dose").html(lycopeneDose.mg + ' mg');
+            $("#ome-dose").html('use dose on bottle');
+        };
+        
+         $(function () {
+            $("#calculate-btn").click(function () {
+                calculateResult();
+                $("#dosages-div").removeAttr('hidden');
+            });
+            $("#print-btn").click(function () {
+                var prtContent = document.getElementById("print-div");
+                var winPrint = window.open('', '', 'left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0');
+                winPrint.document.write(prtContent.innerHTML);
+                winPrint.document.close();
+                winPrint.focus();
+                winPrint.print();
+                winPrint.close();
+            });
+        });
+        $('.decimal').keyup(function () {
+            var val = $(this).val();
+            if (isNaN(val)) {
+                val = val.replace(/[^0-9\.]/g, '');
+                if (val.split('.').length > 2)
+                    val = val.replace(/\.+$/, "");
+            }
+            $(this).val(val);
+        });
+    </script>
+
+</body>
+</html>

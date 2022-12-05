@@ -1,1 +1,1 @@
-# tni
+# tni calculator
