@@ -123,7 +123,7 @@
                     <h3 class="card-header">
                         Daily amounts
                     </h3>
-                        <div class="card-block">
+                        <div id="dosage-table-div" class="card-block">
                         <table class="table-bordered">
                             <tr>
                                 <td>Lycopene</td>
@@ -254,6 +254,8 @@
                 $("#dosages-div").removeAttr('hidden');
             });
             $("#print-btn").click(function () {
+                var dosageContent = document.getElementById("dosage-table-div").innerHTML;
+                document.getElementById("print-result-div").innerHTML = dosageContent;  
                 var prtContent = document.getElementById("print-div");
                 var winPrint = window.open('', '', 'left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0');
                 winPrint.document.write(prtContent.innerHTML);
