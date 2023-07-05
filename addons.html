@@ -167,6 +167,10 @@
                                 <td>Lithium Orotate</td>
                                 <td id="lith-dose"></td> 
                             </tr>
+                            <tr>
+                                <td>Luteolin Rutin Complex</td>
+                                <td id="lr-dose"></td> 
+                            </tr>
                             
                         </table>
                             </div>
@@ -226,6 +230,7 @@
                 $("#zinc-dose").html('');
                $("#but-dose").html('');
                $("#lith-dose").html('');
+               $("#lr-dose").html('');
             }
             
             var piracetamMinDose = { 'mg': Math.round(bodyweightInKg * 10)};
@@ -241,6 +246,7 @@
             var valerianDose = { 'mg': Math.round(bodyweightInKg * 6)};
             var melatoninDose = null;
             var lithiumDose = { 'mg': 0.5};
+            var lutrutDose = { 'mg': Math.round(bodyweightInKg * 1.5)};
             
             if($("input[name=age-btn]:checked").val() == "inf"){
                 melatoninDose = { 'mg': 1.0};
@@ -271,6 +277,7 @@
             $("#val-dose").html(valerianDose.mg + ' mg');
             $("#mel-dose").html(melatoninDose.mg + ' mg');
             $("#lith-dose").html(lithiumDose.mg + ' mg');
+            $("#lr-dose").html(lutrutDose.mg + ' mg');
         };
         
          $(function () {
