@@ -217,24 +217,29 @@
             var alaDose = { 'mg': Math.round(bodyweightInKg * 9)};
             var glutathioneMinDose = { 'mg': Math.round(bodyweightInKg * 4)};
             var glutathioneMaxDose = { 'mg': Math.round(bodyweightInKg * 6)};
-            var melatoninDose = null
+            var melatoninMinDose = null
+            var melatoninMaxDose = null
             var lycopeneDose = null
             var omega3Dose = null
             
             if($("input[name=age-btn]:checked").val() == "inf"){
-                melatoninDose = { 'mg': 0.5 to 1.0};
+                melatoninMinDose = { 'mg': 0.5};
+                melatoninMaxDose = { 'mg': 1.0};
                 lycopeneDose = { 'mg': 3.0};
                 
             }else if($("input[name=age-btn]:checked").val() == "tod"){
-                melatoninDose = { 'mg': 3.0};
+                melatoninMinDose = { 'mg': 1.0};
+                melatoninMaxDose = { 'mg': 2.5};
                 lycopeneDose = { 'mg': 5.0};
                 
             }else if($("input[name=age-btn]:checked").val() == "child"){
-                melatoninDose = { 'mg': 5.0};
+                melatoninMinDose = { 'mg': 1.0};
+                melatoninMaxDose = { 'mg': 3.0};
                 lycopeneDose = { 'mg': 10.0};
                 
             }else if($("input[name=age-btn]:checked").val() == "adult"){
-                melatoninDose = { 'mg': 10.0};
+                melatoninMinDose = { 'mg': 1.0};
+                melatoninMaxDose = { 'mg': 5.0};
                 lycopeneDose = { 'mg': 15.0};
                 
             }
@@ -243,7 +248,7 @@
             $("#vitc-dose").html(vitaminCDose.mg + ' mg');
             $("#ala-dose").html(alaDose.mg + ' mg ');
             $("#glu-dose").html(glutathioneMinDose.mg + ' - ' + glutathioneMaxDose.mg + ' mg');
-            $("#mel-dose").html(melatoninDose.mg + ' mg');
+            $("#mel-dose").html(melatoninMinDose.mg + ' - ' + melatoninMaxDose + ' mg');
             $("#lyc-dose").html(lycopeneDose.mg + ' mg');
             $("#ome-dose").html('use dose on bottle');
         };
